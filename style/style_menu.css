@@ -118,7 +118,7 @@
     background-color: hsl(0, 0%, 10%);
     width: 100%;
     position: fixed;
-    right: -100dvw;
+    top: +100dvh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -129,7 +129,7 @@
 }
 
 .resp_shop_cart.active {
-    right: 0;
+    top: 0;
     z-index: 9990;
 }
 
