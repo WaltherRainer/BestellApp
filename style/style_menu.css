@@ -1,0 +1,147 @@
+.menu_card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 16px;
+    color: black;
+    z-index: 10;
+}
+
+.menue {
+    padding-bottom: 16px;
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.menue p {
+    font-size: 16px;
+}
+
+.shop_cart {
+    margin-right: 8px;
+
+}
+
+.menu_card h2 {
+    padding-bottom: 32px;
+    padding-top: 32px;
+    font-size: 32px;
+}
+
+.menue h3 {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-size: 20px;
+}
+
+.menue h5 {
+    font-weight: 200;
+    font-size: 20px;
+    padding-bottom: 12px;
+    padding-top: 4px;
+}
+
+.menue td {
+    padding-right: 16px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.shop_cart_entry {
+    display: flex;
+    justify-content: space-between;
+}
+
+.shop_cart_menu h4 {
+    padding-bottom: 8px;
+}
+.shop_cart_menu h5 {
+    padding-bottom: 8px;
+}
+
+.shop_cart_menu {
+    padding-bottom: 32px;
+}
+
+.costs_to_pay {
+    padding-top: 32px;
+}
+
+.costs_to_pay table {
+    table-layout: fixed;
+    width: 100%;
+    max-width: 300px;
+}
+
+.table_amount {
+    text-align: right;
+    width: 100%;
+}
+
+.table_sum_row {
+    font-weight: 600;
+}
+
+.order_icons_mid_size {
+    height: 30px;
+    padding-top: 8px;
+    cursor: pointer;
+}
+
+.order_icons_small_size {
+    cursor: pointer;
+    height: 24px;
+}
+
+.box_item.inactive {
+    opacity: 0.2;
+}
+
+.menu_card.inactive {
+    opacity: 0.2;
+}
+
+.footer.active {
+    z-index: 9999;
+}
+
+.btn_basket {
+    height: 80px;
+    padding: 16px 0;
+}
+
+.resp_shop_cart {
+    background-color: hsl(0, 0%, 10%);
+    /* min-height: calc(100vh - 160px);
+    min-width: calc(100vw - 16px); */
+    width: 100%;
+    /* max-width: 100dvw; */
+    position: fixed;
+    top: -100dvh;
+
+    /* top: 0px; */
+    /* right: -100dvw; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    /* padding-left: 16px; */
+    /* text-align: center; */
+    font-size: 18px;
+    transition: 150ms ease;
+    /* padding-top: 6dvh; */
+    /* padding-right: 10vw; */
+    z-index: 1;
+    /* display: none; */
+}
+
+.resp_shop_cart.active {
+    top: 0;
+    z-index: 9990;
+    /* display: flex; */
+}
+
+

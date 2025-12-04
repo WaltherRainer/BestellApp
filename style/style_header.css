@@ -1,0 +1,92 @@
+header {
+    height: 80px;
+    min-width: 100%;
+    background-color: var(--orange_1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    /* flex-direction: column; */
+}
+
+footer {
+    min-height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--orange_1);
+    flex-grow: 1;
+}
+
+.nav_bar {
+    font-size: 24px;
+    padding-bottom: 5px;
+    /* margin-right: var(--marg_width_perc); */
+}
+
+.nav_bar a {
+    margin-left: 16px;
+}
+
+.shop_cart_header {
+    height: 80px;
+    width: 100%;
+    background-color: var(--orange_1);
+}
+
+
+
+/* START BURGER MENU CODE */
+
+
+
+/* .ham_menu {
+    margin-left: auto;
+    position: relative;
+    z-index: 1;
+    background-color: var(--orange_1);
+} */
+
+/* .ham_menu a {
+   padding: 0;
+   pointer-events: auto;
+} */
+
+/* .ham_menu span {
+    width: 100%;
+    height: 6px;
+    letter-spacing: 6px;
+    background-color: white;
+    border-radius: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 100ms ease-in-out;
+} */
+
+/* .ham_menu span:nth-child(1) {
+    top: 25%;
+}
+
+.ham_menu span:nth-child(3) {
+    top: 75%;
+}
+
+.ham_menu.active span:nth-child(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.ham_menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.ham_menu.active span:nth-child(3) {
+    top: 50%;
+    transform: translate(-50%, 50%) rotate(-45deg);
+} */
+
+
+
+

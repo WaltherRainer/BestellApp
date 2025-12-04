@@ -1,0 +1,95 @@
+/* --- Impressum – Hauptcontainer --- */
+.impressum_header {
+    max-width: 1920px;
+    margin: 80px auto;
+    padding: 0 var(--marg_width_perc);
+    line-height: 1.7;
+    color: #333;
+}
+
+
+/* --- Titel --- */
+.impressum_header h1 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+/* --- Abschnittstitel --- */
+.imp_section h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 32px;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+/* --- Standardtext --- */
+.imp_section p {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+/* --- Liste für Vertreter --- */
+.imp_list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 15px;
+}
+
+.imp_list li {
+    font-size: 16px;
+    margin: 4px 0;
+}
+
+/* --- Links --- */
+.impressum_header a {
+    color: #e67e22;      /* warme Kochwelt-Farbe */
+    text-decoration: none;
+}
+
+.impressum_header a:hover {
+    text-decoration: underline;
+}
+
+/* --- Generator-Hinweis kleiner & dezent --- */
+.imp_generator {
+    font-size: 14px;
+    color: #666;
+    margin-top: 30px;
+}
+
+/* --- Responsive Optimierung --- */
+@media (max-width: 600px) {
+    .impressum_header {
+        margin: 40px 10px;
+    }
+
+    .impressum_header h1 {
+        font-size: 32px;
+    }
+
+    .imp_section h2 {
+        font-size: 20px;
+    }
+
+    .imp_section p,
+    .imp_list li {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 990px) and (min-width: 320px) {
+    .impressum_header {
+        margin: 40px 0;
+    }
+    .imp_section span {
+        font-size: 15px;
+    }
+    .imp_section h2 {
+        margin: 0 0;
+        font-size: 16px;
+    }
+
+}
