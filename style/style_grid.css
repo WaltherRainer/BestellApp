@@ -1,14 +1,13 @@
 .grid_container {
-    max-width: 1920px;
+    
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 300px;
-    grid-template-rows: 80px auto auto 260px 85px;
+    grid-template-rows: 260px auto 260px 85px;
     gap: 1em;
     grid-template-areas: 
-    "head_box head_box head_box head_box"
     "img_box img_box img_box cart"
     "menue_box menue_box menue_box cart"
-    "img_box2 img_box2 img_box2 img_box2"
+    "img_box2 img_box2 img_box2 cart"
     "footer footer footer footer";
 }
 
@@ -16,11 +15,16 @@
     background-color: var(--orange_5);
 }
 
+.img_cont {
+    background-color: hsl(0, 0%, 5%);
+}
+
 .pick_up {
     display: flex;
     padding-top: 32px;
     justify-content: flex-end;
     align-items: center;
+    padding-bottom: 32px;
 }
 
 .btn_shp_cart {

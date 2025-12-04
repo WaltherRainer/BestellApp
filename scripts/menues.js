@@ -126,6 +126,10 @@ function renderCheckout() {
     document.getElementById('resp_shopping_cart').innerHTML += 
     getHeaderTemp();
 
+    document.getElementById('shopping_cart').innerHTML +=
+    getSumTempl(formatedNumber(sum), formatedNumber(shpCosts), 
+    formatedNumber(sum + shpCosts));
+
     for (let i = 0; i < objKeys.length; i++) {
         const myDish = cart[objKeys[i]].dish;
         const mySize = cart[objKeys[i]].size;
@@ -139,9 +143,7 @@ function renderCheckout() {
     getSingleCheckoutTempl(myDish, mySize, myQty, formatedNumber(myPrice));
     };
     
-    document.getElementById('shopping_cart').innerHTML +=
-    getSumTempl(formatedNumber(sum), formatedNumber(shpCosts), 
-    formatedNumber(sum + shpCosts));
+
 
     document.getElementById('resp_shopping_cart').innerHTML +=
     getSumTempl(formatedNumber(sum), formatedNumber(shpCosts), 

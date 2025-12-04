@@ -4,7 +4,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Bestellapp</title>
-        <script src="./script.js"></script>
         <link rel="stylesheet" href="./style/style.css">
         <link rel="stylesheet" href="./style/standard.css">
         <link rel="stylesheet" href="./style/ham_menu.css">
@@ -23,8 +22,10 @@
 
     </head>
 
-    <body class="grid_container" onload="initCart()">
-        <header class="" style="grid-area: head_box">
+
+
+    <body onload="initCart()">
+        <header>
             <a href="./index.html"><img class="logo_img" src="./assets/img/Logo.png" alt="Logo"></a>
             <nav class="ham_menu" onclick="showHamMenu()">
                 <div class="ham_menu_symb"></div>
@@ -33,39 +34,46 @@
             </nav>
         </header>
 
-        <div class="box_item" style="grid-area: img_box">
-            <div class="img_cont">
-                <img class="resp_img" src="./assets/img/pizza_large.webp" alt="">
-            </div>
-        </div>
-
-        <section class="shop_cart" style="grid-area: cart">
-            <div id="shopping_cart"></div>
-
-            <div class="pick_up">
-                <div id="shipping_costs">
-                    <h4>Lieferung zu Ihnen nach Hause</h4>
+        <div class="max_width grid_container">
+            <div class="box_item" style="grid-area: img_box">
+                <div class="img_cont">
+                    <img class="resp_img" src="./assets/img/pizza_large.webp" alt="">
                 </div>
-                <label class="switch">
-                    <input type="checkbox" onclick="toggleShpCosts()" id="shp_costs_switch">
-                    <span class="slider round" ></span>
-                </label>
             </div>
-        </section>
 
-        <main class="box_item menu_card" style="grid-area: menue_box">
-            <h2>Unsere Top Pizza Auswahl</h2>
-            <div id="menues"></div>
-        </main>
+        
+            <div class="sticky_cart">
+                <section class="shop_cart" style="grid-area: cart">
+                    
 
-        <div class="box_item" style="grid-area: img_box2">
-            <div class="img_cont">
-                <img class="resp_img" src="./assets/img/spaghetti_large.webp" alt="">
+                    <div class="pick_up">
+                        <div id="shipping_costs">
+                            <h4>Lieferung zu Ihnen nach Hause</h4>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" onclick="toggleShpCosts()" id="shp_costs_switch">
+                            <span class="slider round" ></span>
+                        </label>
+                    </div>
+
+                    <button class="order_btn">Bestellen</button>
+                    <div id="shopping_cart"></div>
+                </section>
             </div>
+
+            <main class="box_item menu_card" style="grid-area: menue_box">
+                <h2>Unsere Top Pizza Auswahl</h2>
+                <div id="menues"></div>
+            </main>
+
+            <div class="box_item" style="grid-area: img_box2">
+                <div class="img_cont">
+                    <img class="resp_img" src="./assets/img/spaghetti_large.webp" alt="">
+                </div>
+            </div>
+
+            <div class="btn_shp_cart" onclick="showShopCart()"><img class="btn_basket" src="./assets/icons/basket_org.svg" alt=""></div>
         </div>
-
-        <div class="btn_shp_cart" onclick="showShopCart()"><img class="btn_basket" src="./assets/icons/basket_org.svg" alt=""></div>
-
 
         <footer class="footer" style="grid-area: footer">
 

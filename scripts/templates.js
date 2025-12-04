@@ -62,7 +62,6 @@ function getShipTempl(active) {
     `
     }
 
-
 }
 
 function getSumTempl(amount, shpCosts, sum) {
