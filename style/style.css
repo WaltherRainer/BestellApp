@@ -12,15 +12,6 @@ html {
     color: var(--ham_text_color);
 }
 
-/* header {
-    min-height: 80px;
-    min-width: 100%;
-    background-color: var(--orange_1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-} */
-
 body {
     min-height: 100dvh;
     background-color: var(--prim_ham_color);

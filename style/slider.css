@@ -39,13 +39,6 @@ input:checked + .slider {
   background-color: hsl(0, 0%, 15%);
 }
 
-/* input:focus + .slider {
-  box-shadow: 0 0 1px var(--orange_1)
-} */
-/* .slider:hover {
-    background-color: hsl(0, 0%, 20%);
-} */
-
 input:checked + .slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);

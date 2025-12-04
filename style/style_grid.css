@@ -1,5 +1,5 @@
 .grid_container {
-    max-width: 2840px;
+    max-width: 1920px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 300px;
     grid-template-rows: 80px auto auto 260px 85px;
@@ -13,13 +13,7 @@
 }
 
 .box_item {
-    /* text-align: center;
-    padding: 2em;
-    color: wheat;
-    font-size: 2rem; */
     background-color: var(--orange_5);
-    /* box-shadow: 10px 10px rgb(0, 0, 0); */
-    
 }
 
 .pick_up {
@@ -29,12 +23,11 @@
     align-items: center;
 }
 
-
 .btn_shp_cart {
     display: none;
 }
-/* for-tablet-landscape-up */
 
+/* for-tablet-landscape-up */
 @media (max-width: 900px) { 
     .grid_container {
         display: grid;

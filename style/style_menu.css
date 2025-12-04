@@ -21,7 +21,6 @@
 
 .shop_cart {
     margin-right: 8px;
-
 }
 
 .menu_card h2 {
@@ -115,33 +114,21 @@
 
 .resp_shop_cart {
     background-color: hsl(0, 0%, 10%);
-    /* min-height: calc(100vh - 160px);
-    min-width: calc(100vw - 16px); */
     width: 100%;
-    /* max-width: 100dvw; */
     position: fixed;
     top: -100dvh;
-
-    /* top: 0px; */
-    /* right: -100dvw; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    /* padding-left: 16px; */
-    /* text-align: center; */
     font-size: 18px;
     transition: 150ms ease;
-    /* padding-top: 6dvh; */
-    /* padding-right: 10vw; */
     z-index: 1;
-    /* display: none; */
 }
 
 .resp_shop_cart.active {
     top: 0;
     z-index: 9990;
-    /* display: flex; */
 }
 
 

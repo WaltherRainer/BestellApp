@@ -20,7 +20,6 @@
 }
 
 .off_screen_menu {
-    /* background-color: var(--primary_light_grey); */
     height: calc(100dvh);
     width: 300px;
     max-width: 100dvw;
@@ -34,8 +33,6 @@
     text-align: center;
     font-size: 18px;
     transition: 150ms ease;
-    /* padding-top: 80px; */
-    /* padding-right: 10vw; */
     z-index: 1;
 }
 
