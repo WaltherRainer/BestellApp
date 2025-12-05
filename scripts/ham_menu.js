@@ -27,8 +27,6 @@ function showShopCart() {
 function showHamMenuImpr() {
     const offScreenMenu = document.querySelector(".off_screen_menu");
     const footerOpac = document.querySelector(".footer")
-    const backgrOpac = document.querySelector(".impr_div")
     offScreenMenu.classList.toggle("active");
     footerOpac.classList.toggle("active");
-    backgrOpac.classList.toggle("inactive");
 };
