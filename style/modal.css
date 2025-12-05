@@ -1,0 +1,56 @@
+.modal_inner button {
+    background-image: linear-gradient(to right, var(--orange_1), var(--orange_3));
+    border-radius: 20px;
+    border: 0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    color: hsl(0, 0%, 90%);
+    cursor: pointer;
+    padding: 10px 25px;
+
+}
+
+.modal_inner button:active {
+    opacity: 0.8;
+
+}
+
+.modal_order_placed {
+    background-color: hsl(0, 0%, 10%);
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 0.3s ease-in-out;
+    z-index: -1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.modal_order_placed.open {
+    opacity: 1;
+    z-index: 9999;
+}
+
+
+.modal_inner {
+    background-color: hsl(0, 0%, 10%);
+    border-radius: 5px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    padding: 15px 25px;
+    text-align: center;
+    width: 380px;
+}
+
+.modal_inner h2 {
+    margin: 0;
+}
+
+.modal_inner p {
+    line-height: 24px;
+    margin: 10px 0;
+}
+

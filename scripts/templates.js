@@ -92,7 +92,7 @@ function getBasketHeaderTempl(amount, shpCosts, sum) {
                     </td>
                 </tr>
             </table>
-            <button onclick="clearLocStor()" class="order_btn">Bestellen</button>
+            <button onclick="placeOrder()" class="order_btn">Bestellen</button>
 
     `
     
@@ -128,7 +128,7 @@ function getSumTempl(amount, shpCosts, sum) {
                 </tr>
 
             </table>
-            <button onclick="clearLocStor()" class="order_btn">Bestellen</button>
+            <button onclick="placeOrder()" class="order_btn">Bestellen</button>
         
         
     `

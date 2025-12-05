@@ -12,124 +12,29 @@
         <link rel="stylesheet" href="./style/style_header.css">
         <link rel="stylesheet" href="./style/style_menu.css">
         <link rel="stylesheet" href="./style/slider.css">
+        <link rel="stylesheet" href="./style/modal.css">
         <script src="./scripts/templates.js"></script>
         <script src="./scripts/ham_menu.js"></script>
         <script src="./scripts/menues.js"></script>
+        
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
         <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.ico">
-
-  <style>
-
-
-
-
-  </style>
-
 </head>
-<body onload="initCart()">
-  
-    <header>
-        <a href="./index.html"><img class="logo_img" src="./assets/img/Logo.png" alt="Logo"></a>
-        <nav class="ham_menu" onclick="showHamMenu()">
-            <div class="ham_menu_symb"></div>
-            <div class="ham_menu_symb"></div>
-            <div class="ham_menu_symb"></div>
-        </nav>
-    </header>
 
-  <div class="max_width grid_container">
-    <div class="box_item" style="grid-area: img_box">
-      <div class="img_cont">
-        <img class="resp_img" src="./assets/img/pizza_large.webp" alt="">
-      </div>
-    </div>
-      <main class="box_item menu_card" style="grid-area: menue_box">
-          <h2>Unsere Top Pizza Auswahl</h2>
-          <div id="menues">
+<body>
+    <button id="open_modal">Open Modal</button>
 
-
-          </div>
-      </main>
-
-      <div class="box_item" style="grid-area: img_box2">
-          <div class="img_cont">
-              <img class="resp_img" src="./assets/img/spaghetti_large.webp" alt="">
-          </div>
-      </div>
-    
-    <section class="basket_wrapper" style="grid-area: basket">
-      <div class="basket">
-        <div class="basket_header" id="basket_header" >
-          <table >
-              <tr>
-                  <td>
-                      Zwischensumme
-                  </td>
-                  <td class="table_amount">
-                      ${amount}€
-                  </td>
-              </tr>
-              <tr>
-                  <td>
-                      Lieferkosten
-                  </td>
-                  <td class="table_amount" id="shp_costs">
-                      ${shpCosts}€
-                  </td>
-              </tr>
-              <tr class="table_sum_row">
-                  <td>
-                      Gesamt
-                  </td>
-                  <td class="table_amount">
-                      ${sum}€
-                  </td>
-              </tr>
-          </table>
-
-          <button onclick="clearLocStor()" class="order_btn">Bestellen</button>
-          <section style="grid-area: cart">
-              <div class="pick_up">
-                  <div id="shipping_costs">
-                      <h4>Lieferung zu Ihnen nach Hause</h4>
-                  </div>
-                  <label class="switch">
-                      <input type="checkbox" onclick="toggleShpCosts()" id="shp_costs_switch">
-                      <span class="slider round" ></span>
-                  </label>
-              </div>
-          </section>
-
+    <div class="modal_order_placed" id="modal_order_placed">
+        <div class="modal_inner">
+            <h2>Vielen Dank für Deine Bestellung</h2>
+            <p>
+                Die Lieferung ist auf dem Weg zu dir!
+            </p>
+            <button id="close_modal">Schließen</button>
         </div>
-        <div id="shopping_cart"></div>
-      </div>
-
-    </section>
-      <footer class="footer" style="grid-area: footer">
-
-          <div >
-              <a href="./index.html"><img class="footer_img" src="./assets/img/Logo.png" alt="Logo"></a>
-          </div>
-      </footer>
-
-</div>
-
-<div class="btn_shp_cart" onclick="showShopCart()"><img class="btn_basket" src="./assets/icons/basket_org.svg" alt=""></div>
-
-<div class="resp_shop_cart" id="resp_shopping_cart"></div>
-
-
-<div class="off_screen_menu">
-    <nav class="nav_bar_ham_menu">
-        <a href="./index.html" class="nav_links">Start</a>
-        <a href="./menucard.html" class="nav_links">Speisekarte</a>
-        <a href="./contact.html" class="nav_links">Kontakt</a>
-        <a href="./impressum.html" class="nav_links">Impressum</a>
-        <a href="./datenschutz.html" class="nav_links">Datenschutz</a>
-    </nav>
-</div>
-
+    </div>
+    <script src="./scripts/modal.js"></script>
 </body>
 </html>

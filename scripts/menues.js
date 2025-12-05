@@ -55,6 +55,7 @@ let cart = [];
 let shpCosts = 5;
 let pizzaCounter = 0;
 
+
 function toggleShpCosts() {    
     if (shpCosts == 5) {
         shpCosts = 0
@@ -86,6 +87,11 @@ function saveCartData() {
     localStorage.setItem('cart', JSON.stringify(cart))
 }
 
+function close_modal() {
+    const modalOrdPlaced = document.getElementById('modal_order_placed');
+    modalOrdPlaced.classList.remove('open');
+}
+
 function getCartData() {
     let recText = localStorage.getItem('cart');
     let obj = JSON.parse(recText);
@@ -99,6 +105,14 @@ function clearLocStor() {
     renderCheckout();
     renderRespCheckout();
 }
+
+function placeOrder() {
+    if (pizzaCounter > 0) {
+        clearLocStor();
+        const modalOrdPlaced = document.getElementById('modal_order_placed');
+        modalOrdPlaced.classList.add('open');
+    };
+};
 
 function initCart() {
     renderMenu();
