@@ -92,7 +92,7 @@ function getBasketHeaderTempl(amount, shpCosts, sum) {
                     </td>
                 </tr>
             </table>
-            
+            <button onclick="clearLocStor()" class="order_btn">Bestellen</button>
 
     `
     
