@@ -70,9 +70,16 @@
         width: 100%;
         top: calc(100dvh - 80px);
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
+        align-items: center;
         cursor: pointer;
         z-index: 9999;
+    }
+
+    .basket_counter {
+        font-size: 30px;
+        color: var(--orange_1);
+        font-weight: 400;
     }
 
     .menu_card {

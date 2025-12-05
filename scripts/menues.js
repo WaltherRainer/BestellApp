@@ -53,6 +53,7 @@ let allDishes = [
 
 let cart = [];
 let shpCosts = 5;
+let pizzaCounter = 0;
 
 function toggleShpCosts() {    
     if (shpCosts == 5) {
@@ -147,6 +148,8 @@ function renderRespCheckout() {
 
     document.getElementById('resp_shopping_cart').innerHTML +=
     getShipTempl(shpCosts == 5);
+
+    document.getElementById('basket_count').innerHTML = `Du bestellst ${pizzaCounter} Stk.`;
 }
 
 function renderCheckout() {
@@ -177,6 +180,7 @@ function renderCheckout() {
 function pushToCart(dish, size) {
     let price = getPrice(dish, size);
     let objKeys = Object.keys(cart)
+    pizzaCounter++;
 
     if (isInCart(dish, size)) {
         for (let i = 0; i < objKeys.length; i++) {
@@ -204,6 +208,7 @@ function pushToCart(dish, size) {
 }
 
 function removeFromCart(dish, size) {
+    pizzaCounter--;
     let price = getPrice(dish, size);
     let existingItem = cart.find(item =>
         item.dish === dish && item.size === size
@@ -220,6 +225,7 @@ function removeFromCart(dish, size) {
 };
 
 function removeAll(dish, size) {
+    pizzaCounter = 0;
     cart = cart.filter(item => !(item.dish === dish && item.size === size))
     saveCartData();
     renderCheckout();
