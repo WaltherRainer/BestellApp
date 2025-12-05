@@ -163,4 +163,10 @@
     font-weight: 600;
 }
 
+.ranking {
+    font-weight: 500;
+    color: hsl(0, 0%, 10%);
+    /* font-size: 20px; */
+}
+
 

@@ -151,7 +151,7 @@ function renderRespCheckout() {
     document.getElementById('resp_shopping_cart').innerHTML +=
     getShipTempl(shpCosts == 5);
 
-    document.getElementById('basket_count').innerHTML = `Du bestellst ${pizzaCounter} Stk.`;
+    document.getElementById('basket_count').innerHTML = `Du bestellst ${pizzaCounter} Gerichte`;
 }
 
 function renderCheckout() {
