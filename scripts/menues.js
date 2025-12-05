@@ -58,12 +58,14 @@ function toggleShpCosts() {
     if (shpCosts == 5) {
         shpCosts = 0
         renderCheckout();
-        setPickUp(true)
+        renderRespCheckout();
+        setPickUp(true);
     }
     else {
         shpCosts = 5
         renderCheckout();
-        setPickUp(false)
+        renderRespCheckout();
+        setPickUp(false);
     }
 };
 
@@ -166,6 +168,9 @@ function renderCheckout() {
     document.getElementById('basket_header').innerHTML +=
     getBasketHeaderTempl(formatedNumber(sum), formatedNumber(shpCosts), 
     formatedNumber(sum + shpCosts));
+
+    document.getElementById('basket_header').innerHTML +=
+    getShipTempl(shpCosts == 5);
 
 };
 

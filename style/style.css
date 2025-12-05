@@ -74,6 +74,7 @@ main p {
 .basket {
   height: 95%;
   overflow-y: auto;   /* nur dieses Element scrollt */
+  padding-right: 16px;
 }
 
 .basket_header {

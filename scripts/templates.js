@@ -38,8 +38,8 @@ function getShipTempl(active) {
     if (active) {
         return `
             <div class="pick_up">
-                <div id="resp_shipping_costs">
-                    <h4>Abholung bei uns im Restaurant</h4>
+                <div id="shipping_costs">
+                    <h4>Lieferung zu Ihnen nach Hause</h4>
                 </div>
                 <label class="switch">
                     <input type="checkbox" onclick="toggleShpCosts()" id="shp_costs_switch" checked>
@@ -51,7 +51,7 @@ function getShipTempl(active) {
     else {
     return `
         <div class="pick_up">
-            <div id="resp_shipping_costs">
+            <div id="shipping_costs">
                 <h4>Abholung bei uns im Restaurant</h4>
             </div>
             <label class="switch">
@@ -93,18 +93,7 @@ function getBasketHeaderTempl(amount, shpCosts, sum) {
                 </tr>
             </table>
             
-            <button onclick="clearLocStor()" class="order_btn">Bestellen</button>
-            <section class="shop_cart" style="grid-area: cart">
-                <div class="pick_up">
-                    <div id="shipping_costs">
-                        <h4>Lieferung zu Ihnen nach Hause</h4>
-                    </div>
-                    <label class="switch">
-                        <input type="checkbox" onclick="toggleShpCosts()" id="shp_costs_switch">
-                        <span class="slider round" ></span>
-                    </label>
-                </div>
-            </section>
+
     `
     
 }
