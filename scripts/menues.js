@@ -95,6 +95,7 @@ function getCartData() {
 function clearLocStor() {
     localStorage.clear();
     cart = [];
+    pizzaCounter = 0;
     renderCheckout();
     renderRespCheckout();
 }
@@ -130,6 +131,7 @@ function renderMenu() {
 function renderRespCheckout() {
     let objKeys = Object.keys(cart);
     let sum = 0;
+    pizzaCounter = 0;
     document.getElementById('resp_shopping_cart').innerHTML = "";
     for (let i = 0; i < objKeys.length; i++) {
         const myDish = cart[objKeys[i]].dish;
@@ -137,7 +139,7 @@ function renderRespCheckout() {
         const myQty = cart[objKeys[i]].qty;
         const myPrice = cart[objKeys[i]].price;
         sum += myPrice
-
+        pizzaCounter = pizzaCounter + myQty;
     document.getElementById('resp_shopping_cart').innerHTML += 
     getSingleCheckoutTempl(myDish, mySize, myQty, formatedNumber(myPrice));
     };
@@ -155,6 +157,7 @@ function renderRespCheckout() {
 function renderCheckout() {
     let objKeys = Object.keys(cart);
     let sum = 0;
+    
     document.getElementById('shopping_cart').innerHTML = "";
     document.getElementById('basket_header').innerHTML = "";
 
@@ -164,6 +167,7 @@ function renderCheckout() {
         const myQty = cart[objKeys[i]].qty;
         const myPrice = cart[objKeys[i]].price;
         sum += myPrice
+        
     document.getElementById('shopping_cart').innerHTML += 
     getSingleCheckoutTempl(myDish, mySize, myQty, formatedNumber(myPrice));
     };
@@ -180,7 +184,6 @@ function renderCheckout() {
 function pushToCart(dish, size) {
     let price = getPrice(dish, size);
     let objKeys = Object.keys(cart)
-    pizzaCounter++;
 
     if (isInCart(dish, size)) {
         for (let i = 0; i < objKeys.length; i++) {
@@ -208,7 +211,6 @@ function pushToCart(dish, size) {
 }
 
 function removeFromCart(dish, size) {
-    pizzaCounter--;
     let price = getPrice(dish, size);
     let existingItem = cart.find(item =>
         item.dish === dish && item.size === size
@@ -225,7 +227,6 @@ function removeFromCart(dish, size) {
 };
 
 function removeAll(dish, size) {
-    pizzaCounter = 0;
     cart = cart.filter(item => !(item.dish === dish && item.size === size))
     saveCartData();
     renderCheckout();

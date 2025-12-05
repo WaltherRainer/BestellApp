@@ -17,6 +17,7 @@
 
 .img_cont {
     background-color: hsl(0, 0%, 5%);
+    position: relative;
 }
 
 .pick_up {
@@ -155,5 +156,14 @@
     .shop_cart_entry p {
         font-size: 16px;
         padding: 0 8px;
+    }
+    .btn_basket {
+        height: 60px;
+        padding: 8px 0;
+    }
+    .basket_counter {
+        font-size: 24px;
+        color: var(--orange_1);
+        font-weight: 400;
     }
 }
