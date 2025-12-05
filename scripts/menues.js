@@ -110,6 +110,16 @@ function placeOrder() {
     if (pizzaCounter > 0) {
         clearLocStor();
         const modalOrdPlaced = document.getElementById('modal_order_placed');
+        if (shpCosts == 0) {
+            document.getElementById('delivery_or_pickup_text').innerHTML = `
+            Deine Bestellung ist in 30 Minuten bereit für die Abholung!
+            `
+        }
+        else {
+            document.getElementById('delivery_or_pickup_text').innerHTML = `
+            Deine Bestellung ist auf dem Weg zu Dir!
+            `
+        }
         modalOrdPlaced.classList.add('open');
     };
 };
