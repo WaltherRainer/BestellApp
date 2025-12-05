@@ -17,7 +17,11 @@ function showHamMenuWhenShopCartOpen() {
 
 function showShopCart() {
     const offScreenMenu = document.querySelector(".resp_shop_cart");
+    const menuCardOpac = document.querySelector(".grid_container");
+    
     offScreenMenu.classList.toggle("active");
+    menuCardOpac.classList.toggle("inactive");
+
 }
 
 function showHamMenuImpr() {

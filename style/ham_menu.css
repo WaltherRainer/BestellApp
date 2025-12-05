@@ -36,9 +36,14 @@
     z-index: 1;
 }
 
+.grid_container.inactive {
+    display: none;
+    /* overflow-y: hidden; */
+}
+
 .off_screen_menu.active {
     right: 0;
-    z-index: 10;
+    z-index: 900;
     background-color: var(--orange_5);
 
 }
@@ -52,7 +57,7 @@
 .ham_menu {
     cursor: pointer;
     position: relative;
-    z-index: 9999;
+    z-index: 900;
 }
 
 .nav_links {

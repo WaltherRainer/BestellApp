@@ -68,13 +68,16 @@
 }
 
 .costs_to_pay {
-    padding-top: 32px;
+    padding-bottom: 16px;
+    padding-top: 16px;
+    
 }
 
 .costs_to_pay table {
     table-layout: fixed;
     width: 100%;
     max-width: 300px;
+    padding-bottom: 16px;
 }
 
 .table_amount {
@@ -106,7 +109,7 @@
 }
 
 .footer.active {
-    z-index: 9999;
+    z-index: 10;
 }
 
 .btn_basket {
@@ -130,7 +133,15 @@
 
 .resp_shop_cart.active {
     top: 0;
-    z-index: 9990;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column-reverse;
+    align-items: center;
+    height: auto;
+    position: relative;
+    min-height: 100dvh;
+    /* overflow-y: scroll; */
 }
 
 .order_icons_mid_size:hover {
@@ -139,7 +150,7 @@
 
 .order_btn {
     height: 34px;
-    width: 128px;
+    width: 100%;
     border-radius: 34px;
     background-color: var(--orange_5);
     cursor: pointer;

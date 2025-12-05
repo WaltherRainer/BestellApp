@@ -56,7 +56,8 @@ main p {
   position: sticky;
   top: 0;
   left: 0;
-  align-self: start;
+  margin-right: 16px;
+  /* align-self: start; */
 }
 
 

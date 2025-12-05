@@ -92,6 +92,12 @@ function getCartData() {
     cart = obj;
 }
 
+function clearLocStor() {
+    localStorage.clear();
+    cart = [];
+    renderCheckout();
+}
+
 function initCart() {
     renderMenu();
     let myArray = JSON.parse(localStorage.getItem('cart'));
@@ -123,8 +129,8 @@ function renderCheckout() {
     let sum = 0;
     document.getElementById('shopping_cart').innerHTML = ""
     document.getElementById('resp_shopping_cart').innerHTML = ""
-    document.getElementById('resp_shopping_cart').innerHTML += 
-    getHeaderTemp();
+    // document.getElementById('resp_shopping_cart').innerHTML += 
+    // getHeaderTemp();
 
     document.getElementById('shopping_cart').innerHTML +=
     getSumTempl(formatedNumber(sum), formatedNumber(shpCosts), 

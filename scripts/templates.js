@@ -1,5 +1,5 @@
 function getSingleCheckoutTempl(dish, size, qty, amount) {
-    return `        
+    return `     
         <div class="shop_cart_menu">
             <h4>${getDishName(dish)}</h4>
             <h5>${sizeNaming(size)}</h5>
@@ -94,8 +94,9 @@ function getSumTempl(amount, shpCosts, sum) {
                 </tr>
 
             </table>
-
-        </section>
+            <button onclick="clearLocStor()" class="order_btn">Bestellen</button>
+        
+        
     `
 }
 

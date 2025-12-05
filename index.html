@@ -22,8 +22,6 @@
 
     </head>
 
-
-
     <body onload="initCart()">
         <header>
             <a href="./index.html"><img class="logo_img" src="./assets/img/Logo.png" alt="Logo"></a>
@@ -41,7 +39,6 @@
                 </div>
             </div>
 
-        
             <div class="sticky_cart">
                 <section class="shop_cart" style="grid-area: cart">
                     
@@ -55,8 +52,9 @@
                             <span class="slider round" ></span>
                         </label>
                     </div>
+                </section>
 
-                    <button class="order_btn">Bestellen</button>
+
                     <div id="shopping_cart"></div>
                 </section>
             </div>
@@ -75,6 +73,26 @@
             <div class="btn_shp_cart" onclick="showShopCart()"><img class="btn_basket" src="./assets/icons/basket_org.svg" alt=""></div>
         </div>
 
+        <div class="small_shp_cart">
+            
+            <div class="resp_shop_cart" id="resp_shopping_cart"></div>
+            
+            <div class="btn_shp_cart" onclick="showShopCart()">
+                <img class="btn_basket" src="./assets/icons/basket_org.svg" alt="">
+            </div>
+
+
+            <div class="off_screen_menu">
+                <nav class="nav_bar_ham_menu">
+                    <a href="./index.html" class="nav_links">Start</a>
+                    <a href="./menucard.html" class="nav_links">Speisekarte</a>
+                    <a href="./contact.html" class="nav_links">Kontakt</a>
+                    <a href="./impressum.html" class="nav_links">Impressum</a>
+                    <a href="./datenschutz.html" class="nav_links">Datenschutz</a>
+                </nav>
+            </div>
+        </div>
+
         <footer class="footer" style="grid-area: footer">
 
             <div >
@@ -82,18 +100,21 @@
             </div>
         </footer>
 
-        <div class="resp_shop_cart" id="resp_shopping_cart">
+    
 
-            <header class="" style="grid-area: head_box">
+    </body>
+</html>
+
+            <!-- <header class="" style="grid-area: head_box">
                 <a href="#"><img class="logo_img" src="./assets/img/Logo.png" alt="Logo"></a>
                 <nav class="ham_menu" onclick="showHamMenuWhenShopCartOpen()">
                     <div class="ham_menu_symb"></div>
                     <div class="ham_menu_symb"></div>
                     <div class="ham_menu_symb"></div>
                 </nav>
-            </header>
+            </header> -->
 
-            <div class="shop_cart_menu">
+            <!-- <div class="shop_cart_menu">
                 <h4>Pizza Diavolo</h4>
                 <h5>Pizza mit Peperoniwurst</h5>
                 <div class="shop_cart_entry">
@@ -109,8 +130,8 @@
                     onclick="removeAll('PDiavolo', 'smallSize')"  
                     src="./assets/icons/trash_orange.svg" alt="">
                 </div>
-            </div>
-
+            </div> -->
+<!-- 
             <section class="costs_to_pay">
                 <table >
                     <tr>
@@ -140,20 +161,4 @@
 
                 </table>
 
-            </section>
-
-        </div>
-
-            <div class="off_screen_menu">
-                <nav class="nav_bar_ham_menu">
-                    <a href="./index.html" class="nav_links">Start</a>
-                    <a href="./menucard.html" class="nav_links">Speisekarte</a>
-                    <a href="./contact.html" class="nav_links">Kontakt</a>
-                    <a href="./impressum.html" class="nav_links">Impressum</a>
-                    <a href="./datenschutz.html" class="nav_links">Datenschutz</a>
-                </nav>
-            </div>
-
-
-    </body>
-</html>
+            </section> -->
