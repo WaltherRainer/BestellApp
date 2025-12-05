@@ -55,6 +55,11 @@
     .basket {
         display: none;
     }
+
+    .logo h2 {
+        max-width: 260px;
+    }
+
     .off_screen_menu {
         width: 260px;
         height: calc(100dvh - 160px);
@@ -73,24 +78,30 @@
     .menu_card {
         margin-bottom: 32px;
     }
+
     .basket_wrapper {
         display: none;
     }
+
     .shop_cart {
         z-index: 1;
     }
+
     .shop_cart_menu {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
     }
+
     .shop_cart_entry p {
         padding: 0 16px;
         
     }
+
     .shop_cart_entry {
         padding-bottom: 16px;
     }
+
     .shop_cart_menu {
         padding-left: 16px;
         padding-right: 16px;
@@ -100,15 +111,18 @@
     .shop_cart_menu h5 {
         padding-bottom: 8px;
     }
+    
     .costs_to_pay {
         padding-left: 16px;
         padding-right: 16px;
         padding-bottom: 32px;
     }
+
     .pick_up {
         padding-bottom: 36px;
         padding-left: 16px;
     }
+
     .pick_up h4 {
         font-size: 18px;
         padding-right: 8px;
@@ -122,7 +136,7 @@
     }
 
     .switch {
-    width: 44px;
+        width: 44px;
     }
 
 }
