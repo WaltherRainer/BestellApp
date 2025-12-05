@@ -19,3 +19,21 @@
 .footer_img {
     max-height: 60px;
 }
+
+    .logo_luigi_img {
+        max-height: 160px;
+        border-radius: 50%;
+        z-index: 9999;
+        /* transform: translate(calc((50dvw - 460px) / 2), -110px); */
+                position: absolute;
+        /* left: calc(100dvw / 2); */
+        left: 0;
+        top: 0%;
+        transform: translate(40dvw, 360px);
+    }
+
+.logo {
+    display: flex;
+    justify-content: center;
+    
+}

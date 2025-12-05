@@ -69,16 +69,13 @@ function toggleShpCosts() {
 
 function setPickUp(pickUp) {
     document.getElementById('shipping_costs').innerHTML = ""
-    document.getElementById('resp_shipping_costs').innerHTML = ""
+
     let shpCostObj = document.getElementById('shipping_costs');
-    let respShpCostObj = document.getElementById('resp_shipping_costs');
     if (pickUp) {
         shpCostObj.innerHTML = `<h4>Abholung bei uns im Restaurant</h4>`
-        respShpCostObj.innerHTML = `<h4>Abholung bei uns im Restaurant</h4>`
     }
     else {
         shpCostObj.innerHTML = `<h4>Lieferung zu Ihnen nach Hause</h4>`
-        respShpCostObj.innerHTML = `<h4>Lieferung zu Ihnen nach Hause</h4>`
     }
 };
 
@@ -96,6 +93,7 @@ function clearLocStor() {
     localStorage.clear();
     cart = [];
     renderCheckout();
+    renderRespCheckout();
 }
 
 function initCart() {
@@ -104,10 +102,12 @@ function initCart() {
     if (myArray != null) {
         cart = myArray;
         renderCheckout();
+        renderRespCheckout();
     }
     else {
         document.getElementById('shopping_cart').innerHTML =
-        getSumTempl(formatedNumber(0),formatedNumber(5), formatedNumber(5));
+        getBasketHeaderTempl(formatedNumber(0),formatedNumber(5), formatedNumber(5));
+
         document.getElementById('resp_shopping_cart').innerHTML =
         getSumTempl(formatedNumber(0),formatedNumber(5), formatedNumber(5));
     };
@@ -124,17 +124,34 @@ function renderMenu() {
     };
 }
 
+function renderRespCheckout() {
+    let objKeys = Object.keys(cart);
+    let sum = 0;
+    document.getElementById('resp_shopping_cart').innerHTML = "";
+    for (let i = 0; i < objKeys.length; i++) {
+        const myDish = cart[objKeys[i]].dish;
+        const mySize = cart[objKeys[i]].size;
+        const myQty = cart[objKeys[i]].qty;
+        const myPrice = cart[objKeys[i]].price;
+        sum += myPrice
+
+    document.getElementById('resp_shopping_cart').innerHTML += 
+    getSingleCheckoutTempl(myDish, mySize, myQty, formatedNumber(myPrice));
+    };
+
+    document.getElementById('resp_shopping_cart').innerHTML +=
+    getSumTempl(formatedNumber(sum), formatedNumber(shpCosts), 
+    formatedNumber(sum + shpCosts));
+
+    document.getElementById('resp_shopping_cart').innerHTML +=
+    getShipTempl(shpCosts == 5);
+}
+
 function renderCheckout() {
     let objKeys = Object.keys(cart);
     let sum = 0;
-    document.getElementById('shopping_cart').innerHTML = ""
-    document.getElementById('resp_shopping_cart').innerHTML = ""
-    // document.getElementById('resp_shopping_cart').innerHTML += 
-    // getHeaderTemp();
-
-    document.getElementById('shopping_cart').innerHTML +=
-    getSumTempl(formatedNumber(sum), formatedNumber(shpCosts), 
-    formatedNumber(sum + shpCosts));
+    document.getElementById('shopping_cart').innerHTML = "";
+    document.getElementById('basket_header').innerHTML = "";
 
     for (let i = 0; i < objKeys.length; i++) {
         const myDish = cart[objKeys[i]].dish;
@@ -144,19 +161,12 @@ function renderCheckout() {
         sum += myPrice
     document.getElementById('shopping_cart').innerHTML += 
     getSingleCheckoutTempl(myDish, mySize, myQty, formatedNumber(myPrice));
-
-    document.getElementById('resp_shopping_cart').innerHTML += 
-    getSingleCheckoutTempl(myDish, mySize, myQty, formatedNumber(myPrice));
     };
     
-
-
-    document.getElementById('resp_shopping_cart').innerHTML +=
-    getSumTempl(formatedNumber(sum), formatedNumber(shpCosts), 
+    document.getElementById('basket_header').innerHTML +=
+    getBasketHeaderTempl(formatedNumber(sum), formatedNumber(shpCosts), 
     formatedNumber(sum + shpCosts));
 
-    document.getElementById('resp_shopping_cart').innerHTML +=
-    getShipTempl(shpCosts == 5);
 };
 
 function pushToCart(dish, size) {
@@ -185,6 +195,7 @@ function pushToCart(dish, size) {
     }
     saveCartData();
     renderCheckout();
+    renderRespCheckout();
 }
 
 function removeFromCart(dish, size) {
@@ -200,12 +211,14 @@ function removeFromCart(dish, size) {
     }
     saveCartData();
     renderCheckout();
+    renderRespCheckout();
 };
 
 function removeAll(dish, size) {
     cart = cart.filter(item => !(item.dish === dish && item.size === size))
     saveCartData();
     renderCheckout();
+    renderRespCheckout();
 }
 
 function isInCart(dish, size) {

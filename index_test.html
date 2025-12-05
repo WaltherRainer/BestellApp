@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bestellapp</title>
+        <link rel="stylesheet" href="./style/style.css">
+        <link rel="stylesheet" href="./style/standard.css">
+        <link rel="stylesheet" href="./style/ham_menu.css">
+        <link rel="stylesheet" href="./style/style_images.css">
+        <link rel="stylesheet" href="./style/style_grid.css">
+        <link rel="stylesheet" href="./style/style_header.css">
+        <link rel="stylesheet" href="./style/style_menu.css">
+        <link rel="stylesheet" href="./style/slider.css">
+        <script src="./scripts/templates.js"></script>
+        <script src="./scripts/ham_menu.js"></script>
+        <script src="./scripts/menues.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.ico">
+
+        <style>
+            .basket {
+            height: 100%;
+            overflow-y: auto;   /* nur dieses Element scrollt */
+            }
+
+            .basket_header {
+            position: sticky;
+            top: 0;
+            background: rgb(13, 15, 15); /* optional, verhindert "Durchscheinen" */
+            z-index: 10;            /* sorgt dafür, dass der Header über dem Text liegt */
+            padding: 8px;
+            }
+
+            .basket_wrapper {
+            width: 300px;
+            /* background-color: aquamarine; */
+            position: sticky;
+            top: 0;
+            height: 100vh;      
+            /* WICHTIG: Keine Scrollbar hier! */
+            overflow: hidden;
+            }
+
+        </style>
+
+    </head>
+
+    <body onload="initCart()">
+        <header>
+            <a href="./index.html"><img class="logo_img" src="./assets/img/Logo.png" alt="Logo"></a>
+            <nav class="ham_menu" onclick="showHamMenu()">
+                <div class="ham_menu_symb"></div>
+                <div class="ham_menu_symb"></div>
+                <div class="ham_menu_symb"></div>
+            </nav>
+        </header>
+
+        <div class="max_width grid_container">
+            <div class="box_item" style="grid-area: img_box">
+                <div class="img_cont">
+                    <img class="resp_img" src="./assets/img/pizza_large.webp" alt="">
+                </div>
+            </div>
+
+            <div class="basket">
+
+                  <section class="basket_wrapper" style="grid-area: basket">
+                    <div class="basket">
+                        <div class="basket_header" id="basket_header">
+
+                            <table >
+                                <tr>
+                                    <td>
+                                        Zwischensumme
+                                    </td>
+                                    <td class="table_amount">
+                                        ${amount}€
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Lieferkosten
+                                    </td>
+                                    <td class="table_amount" id="shp_costs">
+                                        ${shpCosts}€
+                                    </td>
+                                </tr>
+                                <tr class="table_sum_row">
+                                    <td>
+                                        Gesamt
+                                    </td>
+                                    <td class="table_amount">
+                                        ${sum}€
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <button onclick="clearLocStor()" class="order_btn">Bestellen</button>
+                            <section style="grid-area: cart">
+                                <div class="pick_up">
+                                    <div id="shipping_costs">
+                                        <h4>Lieferung zu Ihnen nach Hause</h4>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox" onclick="toggleShpCosts()" id="shp_costs_switch">
+                                        <span class="slider round" ></span>
+                                    </label>
+                                </div>
+                            </section>
+
+
+                        </div>
+
+                        <div id="shopping_cart">
+
+
+                        </div>
+
+
+                    </div>
+
+                  </section>
+
+
+            </div>
+
+            <!-- <div class="sticky_cart">
+                <section class="shop_cart" style="grid-area: cart">
+                    <div class="pick_up">
+                        <div id="shipping_costs">
+                            <h4>Lieferung zu Ihnen nach Hause</h4>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" onclick="toggleShpCosts()" id="shp_costs_switch">
+                            <span class="slider round" ></span>
+                        </label>
+                    </div>
+                </section>
+            </div> -->
+
+            <!-- <div id="shopping_cart">
+
+
+                <div class="shop_cart_menu">
+                    <h4>${getDishName(dish)}</h4>
+                    <h5>${sizeNaming(size)}</h5>
+                    <div class="shop_cart_entry">
+                        <img class="order_icons_small_size" 
+                        onclick="removeFromCart('${dish}', '${size}')" 
+                        src="./assets/icons/minus_orange.svg" alt="">
+                        <p>Anzahl: ${qty}</p>
+                        <img class="order_icons_small_size" 
+                        onclick="pushToCart('${dish}', '${size}')" 
+                        src="./assets/icons/plus_orange.svg" alt="">
+                        <p>Preis: ${amount}€</p>
+                        <img class="order_icons_small_size" 
+                        onclick="removeAll('${dish}', '${size}')" 
+                        src="./assets/icons/trash_orange.svg" alt="">
+                    </div>
+                </div> 
+
+
+            </div> -->
+
+            </section>
+            
+
+            <main class="box_item menu_card" style="grid-area: menue_box">
+                <h2>Unsere Top Pizza Auswahl</h2>
+                <div id="menues">
+
+
+                    <div class="menue">
+                        <div>
+                            <h3>${getDishName(dish)}</h3>
+                            <h5>${getDishDescr(dish)}</h5>
+                            <table>
+                                <tr>
+                                    <td>
+                                        ${sizeNaming('smallSize')}
+                                    </td>
+                                    <td>
+                                        ${formatedNumber(getPrice(dish, 'smallSize'))} €
+                                    </td>
+                                    <td>
+                                        <img onclick="pushToCart('${dish}', 'smallSize')" 
+                                        class="order_icons_mid_size" src="./assets/icons/plus-circle.svg" 
+                                        alt="Hinzufügen">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        ${sizeNaming('medSize')}
+                                    </td>
+                                    <td>
+                                        ${formatedNumber(getPrice(dish, 'medSize'))} €
+                                    </td>
+                                    <td>
+                                        <img onclick="pushToCart('${dish}', 'medSize')" 
+                                        class="order_icons_mid_size" src="./assets/icons/plus-circle.svg" 
+                                        alt="Hinzufügen">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        ${sizeNaming('largeSize')}
+                                    </td>
+                                    <td>
+                                        ${formatedNumber(getPrice(dish, 'largeSize'))} €
+                                    </td>
+                                    <td>
+                                        <img onclick="pushToCart('${dish}', 'largeSize')" 
+                                        class="order_icons_mid_size" src="./assets/icons/plus-circle.svg" 
+                                        alt="Hinzufügen">
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+
+                </div>
+            </main>
+
+            <div class="box_item" style="grid-area: img_box2">
+                <div class="img_cont">
+                    <img class="resp_img" src="./assets/img/spaghetti_large.webp" alt="">
+                </div>
+            </div>
+
+            <div class="btn_shp_cart" onclick="showShopCart()"><img class="btn_basket" src="./assets/icons/basket_org.svg" alt=""></div>
+        </div>
+
+
+
+        <!-- Ausgeblendet -->
+        <div class="small_shp_cart">
+            
+            
+            <div class="resp_shop_cart" id="resp_shopping_cart">
+
+
+
+
+            </div>
+            
+            <div class="btn_shp_cart" onclick="showShopCart()">
+                <img class="btn_basket" src="./assets/icons/basket_org.svg" alt="">
+            </div>
+
+
+            <div class="off_screen_menu">
+                <nav class="nav_bar_ham_menu">
+                    <a href="./index.html" class="nav_links">Start</a>
+                    <a href="./menucard.html" class="nav_links">Speisekarte</a>
+                    <a href="./contact.html" class="nav_links">Kontakt</a>
+                    <a href="./impressum.html" class="nav_links">Impressum</a>
+                    <a href="./datenschutz.html" class="nav_links">Datenschutz</a>
+                </nav>
+            </div>
+        </div>
+
+        <footer class="footer" style="grid-area: footer">
+
+            <div >
+                <a href="./index.html"><img class="footer_img" src="./assets/img/Logo.png" alt="Logo"></a>
+            </div>
+        </footer>
+
+    
+
+    </body>
+</html>

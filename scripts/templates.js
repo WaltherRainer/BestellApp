@@ -64,6 +64,51 @@ function getShipTempl(active) {
 
 }
 
+function getBasketHeaderTempl(amount, shpCosts, sum) {
+    return `
+            <table >
+                <tr>
+                    <td>
+                        Zwischensumme
+                    </td>
+                    <td class="table_amount">
+                        ${amount}€
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Lieferkosten
+                    </td>
+                    <td class="table_amount" id="shp_costs">
+                        ${shpCosts}€
+                    </td>
+                </tr>
+                <tr class="table_sum_row">
+                    <td>
+                        Gesamt
+                    </td>
+                    <td class="table_amount">
+                        ${sum}€
+                    </td>
+                </tr>
+            </table>
+            
+            <button onclick="clearLocStor()" class="order_btn">Bestellen</button>
+            <section class="shop_cart" style="grid-area: cart">
+                <div class="pick_up">
+                    <div id="shipping_costs">
+                        <h4>Lieferung zu Ihnen nach Hause</h4>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" onclick="toggleShpCosts()" id="shp_costs_switch">
+                        <span class="slider round" ></span>
+                    </label>
+                </div>
+            </section>
+    `
+    
+}
+
 function getSumTempl(amount, shpCosts, sum) {
     return `
         <section class="costs_to_pay">

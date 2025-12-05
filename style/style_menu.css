@@ -24,8 +24,7 @@
 }
 
 .menu_card h2 {
-    padding-bottom: 32px;
-    padding-top: 32px;
+    padding-top: 64px;
     font-size: 32px;
 }
 
@@ -70,6 +69,9 @@
 .costs_to_pay {
     padding-bottom: 16px;
     padding-top: 16px;
+    position: sticky;
+    top: 0;
+    background-color: hsl(0, 0%, 10%);
     
 }
 
@@ -129,6 +131,7 @@
     font-size: 18px;
     transition: 150ms ease;
     z-index: 1;
+
 }
 
 .resp_shop_cart.active {
@@ -141,6 +144,7 @@
     height: auto;
     position: relative;
     min-height: 100dvh;
+    margin-bottom: 64px;
     /* overflow-y: scroll; */
 }
 

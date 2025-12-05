@@ -3,189 +3,132 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+        <title>Bestellapp</title>
+        <link rel="stylesheet" href="./style/style.css">
+        <link rel="stylesheet" href="./style/standard.css">
+        <link rel="stylesheet" href="./style/ham_menu.css">
+        <link rel="stylesheet" href="./style/style_images.css">
+        <link rel="stylesheet" href="./style/style_grid.css">
+        <link rel="stylesheet" href="./style/style_header.css">
+        <link rel="stylesheet" href="./style/style_menu.css">
+        <link rel="stylesheet" href="./style/slider.css">
+        <script src="./scripts/templates.js"></script>
+        <script src="./scripts/ham_menu.js"></script>
+        <script src="./scripts/menues.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.ico">
 
   <style>
 
-    .content_wrapper {
-      display: grid;
-      grid-template-columns: calc(100% - 308px) 300px;
-      grid-template-rows: 1fr;
-      grid-template-areas: 
-      "content basket";
-    }
 
-    .content {
-      background-color: blue;
-      padding-left: 16px;
-      padding-right: 16px;
-    }
-
-    .basket_wrapper {
-      width: 300px;
-      background-color: aquamarine;
-      flex-grow: 1;
-    }
-
-    
-
-    p {
-      font-size: 24px;  
-    }
-
-    .test_content {
-      font-size: 48px;
-      width: 100%;
-
-    }
-
-    .basket {
-      width: 100%;
-      /* height: 400px; */
-      position: sticky;
-      top: 0;
-      
-    }
 
 
   </style>
 
 </head>
-<body>
+<body onload="initCart()">
   
+    <header>
+        <a href="./index.html"><img class="logo_img" src="./assets/img/Logo.png" alt="Logo"></a>
+        <nav class="ham_menu" onclick="showHamMenu()">
+            <div class="ham_menu_symb"></div>
+            <div class="ham_menu_symb"></div>
+            <div class="ham_menu_symb"></div>
+        </nav>
+    </header>
 
-
-<header>Hallo Ich bin der Header</header>
-
-<div class="content_wrapper">
-  <section class="content" style="grid-area: content">
-    <div class="test_content">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        Eaque adipisci sed dicta quis, voluptates architecto unde corrupti beatae, 
-        illo voluptatibus veritatis autem natus assumenda a quidem incidunt excepturi 
-        harum quam! Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        Eaque adipisci sed dicta quis, voluptates architecto unde corrupti beatae, 
-        illo voluptatibus veritatis autem natus assumenda a quidem incidunt excepturi 
-        harum quam! Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        Eaque adipisci sed dicta quis, voluptates architecto unde corrupti beatae, 
-        illo voluptatibus veritatis autem natus assumenda a quidem incidunt excepturi 
-        harum quam! Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        Eaque adipisci sed dicta quis, voluptates architecto unde corrupti beatae, 
-        illo voluptatibus veritatis autem natus assumenda a quidem incidunt excepturi 
-        harum quam!</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        Eaque adipisci sed dicta quis, voluptates architecto unde corrupti beatae, 
-        illo voluptatibus veritatis autem natus assumenda a quidem incidunt excepturi 
-        harum quam! Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        Eaque adipisci sed dicta quis, voluptates architecto unde corrupti beatae, 
-        illo voluptatibus veritatis autem natus assumenda a quidem incidunt excepturi 
-        harum quam! Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        Eaque adipisci sed dicta quis, voluptates architecto unde corrupti beatae, 
-        illo voluptatibus veritatis autem natus assumenda a quidem incidunt excepturi 
-        harum quam! Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        Eaque adipisci sed dicta quis, voluptates architecto unde corrupti beatae, 
-        illo voluptatibus veritatis autem natus assumenda a quidem incidunt excepturi 
-        harum quam!
-      </p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        Eaque adipisci sed dicta quis, voluptates architecto unde corrupti beatae, 
-        illo voluptatibus veritatis autem natus assumenda a quidem incidunt excepturi 
-        harum quam! Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        Eaque adipisci sed dicta quis, voluptates architecto unde corrupti beatae, 
-        illo voluptatibus veritatis autem natus assumenda a quidem incidunt excepturi 
-        harum quam! Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        Eaque adipisci sed dicta quis, voluptates architecto unde corrupti beatae, 
-        illo voluptatibus veritatis autem natus assumenda a quidem incidunt excepturi 
-        harum quam! Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        Eaque adipisci sed dicta quis, voluptates architecto unde corrupti beatae, 
-        illo voluptatibus veritatis autem natus assumenda a quidem incidunt excepturi 
-        harum quam!
-      </p>
+  <div class="max_width grid_container">
+    <div class="box_item" style="grid-area: img_box">
+      <div class="img_cont">
+        <img class="resp_img" src="./assets/img/pizza_large.webp" alt="">
+      </div>
     </div>
-  </section>
+      <main class="box_item menu_card" style="grid-area: menue_box">
+          <h2>Unsere Top Pizza Auswahl</h2>
+          <div id="menues">
 
-  <section class="basket_wrapper" style="grid-area: basket">
-    <div class="basket">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Eaque adipisci sed dicta quis, voluptates architecto unde corrupti beatae, 
-      illo voluptatibus veritatis autem natus assumenda a quidem incidunt excepturi 
-      harum quam! Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Eaque adipisci sed dicta quis, voluptates architecto unde corrupti beatae, 
-      illo voluptatibus veritatis autem natus assumenda a quidem incidunt excepturi 
-      harum quam! Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Eaque adipisci sed dicta quis, voluptates architecto unde corrupti beatae, 
-      illo voluptatibus veritatis autem natus assumenda a quidem incidunt excepturi 
-      harum quam! Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Eaque adipisci sed dicta quis, voluptates architecto unde corrupti beatae, 
-      illo voluptatibus veritatis autem natus assumenda a quidem incidunt excepturi 
-      harum quam!</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Eaque adipisci sed dicta quis, voluptates architecto unde corrupti beatae, 
-      illo voluptatibus veritatis autem natus assumenda a quidem incidunt excepturi 
-      harum quam! Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Eaque adipisci sed dicta quis, voluptates architecto unde corrupti beatae, 
-      illo voluptatibus veritatis autem natus assumenda a quidem incidunt excepturi 
-      harum quam! Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Eaque adipisci sed dicta quis, voluptates architecto unde corrupti beatae, 
-      illo voluptatibus veritatis autem natus assumenda a quidem incidunt excepturi 
-      harum quam! Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Eaque adipisci sed dicta quis, voluptates architecto unde corrupti beatae, 
-      illo voluptatibus veritatis autem natus assumenda a quidem incidunt excepturi 
-      harum quam!</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Eaque adipisci sed dicta quis, voluptates architecto unde corrupti beatae, 
-      illo voluptatibus veritatis autem natus assumenda a quidem incidunt excepturi 
-      harum quam! Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Eaque adipisci sed dicta quis, voluptates architecto unde corrupti beatae, 
-      illo voluptatibus veritatis autem natus assumenda a quidem incidunt excepturi 
-      harum quam! Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Eaque adipisci sed dicta quis, voluptates architecto unde corrupti beatae, 
-      illo voluptatibus veritatis autem natus assumenda a quidem incidunt excepturi 
-      harum quam! Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Eaque adipisci sed dicta quis, voluptates architecto unde corrupti beatae, 
-      illo voluptatibus veritatis autem natus assumenda a quidem incidunt excepturi 
-      harum quam!</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Eaque adipisci sed dicta quis, voluptates architecto unde corrupti beatae, 
-      illo voluptatibus veritatis autem natus assumenda a quidem incidunt excepturi 
-      harum quam! Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Eaque adipisci sed dicta quis, voluptates architecto unde corrupti beatae, 
-      illo voluptatibus veritatis autem natus assumenda a quidem incidunt excepturi 
-      harum quam! Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Eaque adipisci sed dicta quis, voluptates architecto unde corrupti beatae, 
-      illo voluptatibus veritatis autem natus assumenda a quidem incidunt excepturi 
-      harum quam! Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Eaque adipisci sed dicta quis, voluptates architecto unde corrupti beatae, 
-      illo voluptatibus veritatis autem natus assumenda a quidem incidunt excepturi 
-      harum quam!</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Eaque adipisci sed dicta quis, voluptates architecto unde corrupti beatae, 
-      illo voluptatibus veritatis autem natus assumenda a quidem incidunt excepturi 
-      harum quam! Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Eaque adipisci sed dicta quis, voluptates architecto unde corrupti beatae, 
-      illo voluptatibus veritatis autem natus assumenda a quidem incidunt excepturi 
-      harum quam! Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Eaque adipisci sed dicta quis, voluptates architecto unde corrupti beatae, 
-      illo voluptatibus veritatis autem natus assumenda a quidem incidunt excepturi 
-      harum quam! Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Eaque adipisci sed dicta quis, voluptates architecto unde corrupti beatae, 
-      illo voluptatibus veritatis autem natus assumenda a quidem incidunt excepturi 
-      harum quam!</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Eaque adipisci sed dicta quis, voluptates architecto unde corrupti beatae, 
-      illo voluptatibus veritatis autem natus assumenda a quidem incidunt excepturi 
-      harum quam! Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Eaque adipisci sed dicta quis, voluptates architecto unde corrupti beatae, 
-      illo voluptatibus veritatis autem natus assumenda a quidem incidunt excepturi 
-      harum quam! Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Eaque adipisci sed dicta quis, voluptates architecto unde corrupti beatae, 
-      illo voluptatibus veritatis autem natus assumenda a quidem incidunt excepturi 
-      harum quam! Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-      Eaque adipisci sed dicta quis, voluptates architecto unde corrupti beatae, 
-      illo voluptatibus veritatis autem natus assumenda a quidem incidunt excepturi 
-      harum quam!</p>
-    </div>
-  </section>
+
+          </div>
+      </main>
+
+      <div class="box_item" style="grid-area: img_box2">
+          <div class="img_cont">
+              <img class="resp_img" src="./assets/img/spaghetti_large.webp" alt="">
+          </div>
+      </div>
+    
+    <section class="basket_wrapper" style="grid-area: basket">
+      <div class="basket">
+        <div class="basket_header" id="basket_header" >
+          <table >
+              <tr>
+                  <td>
+                      Zwischensumme
+                  </td>
+                  <td class="table_amount">
+                      ${amount}€
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                      Lieferkosten
+                  </td>
+                  <td class="table_amount" id="shp_costs">
+                      ${shpCosts}€
+                  </td>
+              </tr>
+              <tr class="table_sum_row">
+                  <td>
+                      Gesamt
+                  </td>
+                  <td class="table_amount">
+                      ${sum}€
+                  </td>
+              </tr>
+          </table>
+
+          <button onclick="clearLocStor()" class="order_btn">Bestellen</button>
+          <section style="grid-area: cart">
+              <div class="pick_up">
+                  <div id="shipping_costs">
+                      <h4>Lieferung zu Ihnen nach Hause</h4>
+                  </div>
+                  <label class="switch">
+                      <input type="checkbox" onclick="toggleShpCosts()" id="shp_costs_switch">
+                      <span class="slider round" ></span>
+                  </label>
+              </div>
+          </section>
+
+        </div>
+        <div id="shopping_cart"></div>
+      </div>
+
+    </section>
+      <footer class="footer" style="grid-area: footer">
+
+          <div >
+              <a href="./index.html"><img class="footer_img" src="./assets/img/Logo.png" alt="Logo"></a>
+          </div>
+      </footer>
+
+</div>
+
+<div class="btn_shp_cart" onclick="showShopCart()"><img class="btn_basket" src="./assets/icons/basket_org.svg" alt=""></div>
+
+<div class="resp_shop_cart" id="resp_shopping_cart"></div>
+
+
+<div class="off_screen_menu">
+    <nav class="nav_bar_ham_menu">
+        <a href="./index.html" class="nav_links">Start</a>
+        <a href="./menucard.html" class="nav_links">Speisekarte</a>
+        <a href="./contact.html" class="nav_links">Kontakt</a>
+        <a href="./impressum.html" class="nav_links">Impressum</a>
+        <a href="./datenschutz.html" class="nav_links">Datenschutz</a>
+    </nav>
 </div>
 
 </body>

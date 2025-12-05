@@ -2,12 +2,12 @@
     
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 300px;
-    grid-template-rows: 260px minmax(100dvh - auto) minmax(260px - auto) 85px;
+    grid-template-rows: 260px auto minmax(260px - auto) 85px;
     gap: 1em;
     grid-template-areas: 
     "img_box img_box img_box img_box"
-    "menue_box menue_box menue_box cart"
-    "img_box2 img_box2 img_box2 cart"
+    "menue_box menue_box menue_box basket"
+    "img_box2 img_box2 img_box2 basket"
     "footer footer footer footer";
 }
 
@@ -37,6 +37,21 @@
     display: none;
 }
 
+@media (max-width: 650px) { 
+    .logo_luigi_img {
+        max-height: 120px;
+        border-radius: 50%;
+        z-index: 9999;
+        /* transform: translate(calc((50dvw - 460px) / 2), -110px); */
+        position: absolute;
+        /* left: calc(100dvw / 2); */
+        left: calc(100dvw - 100%);
+        top: -65px;
+        /* transform: translate(20dvw, 360px); */
+    }
+
+}
+
 /* for-tablet-landscape-up */
 @media (max-width: 900px) { 
     .grid_container {
@@ -50,7 +65,7 @@
         "img_box2"
         "footer";
     }
-    .shop_cart {
+    .basket {
         display: none;
     }
     .off_screen_menu {
@@ -61,7 +76,7 @@
         position: fixed;
         background-color: hsl(0, 0%, 5%);
         width: 100%;
-        top: calc(100dvh - 160px);
+        top: calc(100dvh - 80px);
         display: flex;
         justify-content: center;
         cursor: pointer;
@@ -70,6 +85,9 @@
 
     .menu_card {
         margin-bottom: 32px;
+    }
+    .basket_wrapper {
+        display: none;
     }
     .shop_cart {
         z-index: 1;
@@ -89,7 +107,7 @@
     .shop_cart_menu {
         padding-left: 16px;
         padding-right: 16px;
-        padding-top: 32px;
+
     }
 
     .shop_cart_menu h5 {
@@ -111,12 +129,14 @@
     }
 
     #shopping_cart {
-            display: none;
+            display: flex;
+            flex-direction: column-reverse;
+
     }
 
-.switch {
-  width: 44px;
-}
+    .switch {
+    width: 44px;
+    }
 
 }
 

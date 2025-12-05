@@ -61,4 +61,26 @@ main p {
 }
 
 
+.basket_wrapper {
+  width: 300px;
+  /* background-color: aquamarine; */
+  position: sticky;
+  top: 0;
+  height: 100vh;      
+  /* WICHTIG: Keine Scrollbar hier! */
+  overflow: hidden;
+}
+
+.basket {
+  height: 95%;
+  overflow-y: auto;   /* nur dieses Element scrollt */
+}
+
+.basket_header {
+  position: sticky;
+  top: 0;
+ background-color: hsl(0, 0%, 5%);
+  z-index: 10;            /* sorgt dafür, dass der Header über dem Text liegt */
+  padding: 8px;
+}
 
